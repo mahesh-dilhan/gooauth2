@@ -11,3 +11,7 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/oauth"
 )
+
+func main() {
+
+}
