@@ -13,5 +13,6 @@ import (
 )
 
 func main() {
+	log.Println("Client running ...")
 
 }
