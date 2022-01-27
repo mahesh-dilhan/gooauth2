@@ -20,5 +20,9 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+	opts := []grpc.DialOption{
+		grpc.WithTransportCredentials(trnCreds),
+		grpc.WithPerRPCCredentials(rpcCreds),
+	}
 
 }
