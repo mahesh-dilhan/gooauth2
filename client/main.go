@@ -25,4 +25,12 @@ func main() {
 		grpc.WithPerRPCCredentials(rpcCreds),
 	}
 
+	opts = append(opts, grpc.WithBlock())
+
+	conn, err := grpc.Dial(":50051", opts...)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer conn.Close()
+
 }
