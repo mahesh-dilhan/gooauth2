@@ -33,4 +33,6 @@ func main() {
 	}
 	defer conn.Close()
 
+	client := credit.NewCreditServiceClient(conn)
+
 }
