@@ -35,4 +35,6 @@ func main() {
 
 	client := credit.NewCreditServiceClient(conn)
 
+	request := &credit.CreditRequest{Amount: 1990.01}
+
 }
