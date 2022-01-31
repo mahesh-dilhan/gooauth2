@@ -36,5 +36,6 @@ func main() {
 	client := credit.NewCreditServiceClient(conn)
 
 	request := &credit.CreditRequest{Amount: 1990.01}
-
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
 }
