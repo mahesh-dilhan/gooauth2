@@ -38,4 +38,9 @@ func main() {
 	request := &credit.CreditRequest{Amount: 1990.01}
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
+
+	response, err := client.Credit(ctx, request)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
