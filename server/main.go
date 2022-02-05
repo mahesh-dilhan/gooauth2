@@ -19,3 +19,7 @@ import (
 type server struct {
 	credit.UnimplementedCreditServiceServer
 }
+
+func main() {
+
+}
