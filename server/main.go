@@ -21,5 +21,5 @@ type server struct {
 }
 
 func main() {
-
+	log.Println("Server running ...")
 }
