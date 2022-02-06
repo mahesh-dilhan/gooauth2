@@ -22,4 +22,8 @@ type server struct {
 
 func main() {
 	log.Println("Server running ...")
+	cert, err := tls.LoadX509KeyPair("./server/cert/public.crt", "./server/cert/private.key")
+	if err != nil {
+		log.Fatalf("failed to load key pair: %s", err)
+	}
 }
