@@ -26,4 +26,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to load key pair: %s", err)
 	}
+	opts := []grpc.ServerOption{
+		// Intercept request to check the token.
+		grpc.UnaryInterceptor(validateToken),
+		// Enable TLS for all incoming connections.
+		grpc.Creds(credentials.NewServerTLSFromCert(&cert)),
+	}
 }
