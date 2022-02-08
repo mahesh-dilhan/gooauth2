@@ -32,4 +32,8 @@ func main() {
 		// Enable TLS for all incoming connections.
 		grpc.Creds(credentials.NewServerTLSFromCert(&cert)),
 	}
+	lis, err := net.Listen("tcp", ":50051")
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
