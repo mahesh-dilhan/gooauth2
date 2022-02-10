@@ -38,4 +38,5 @@ func main() {
 	}
 	srv := grpc.NewServer(opts...)
 	credit.RegisterCreditServiceServer(srv, &server{})
+	log.Fatalln(srv.Serve(lis))
 }
