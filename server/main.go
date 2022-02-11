@@ -45,3 +45,6 @@ func (s *server) Credit(ctx context.Context, request *credit.CreditRequest) (*cr
 
 	return &credit.CreditResponse{Confirmation: fmt.Sprintf("Credited %g", request.GetAmount())}, nil
 }
+func valid(authorization []string) bool {
+
+}
