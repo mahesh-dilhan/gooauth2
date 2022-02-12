@@ -40,3 +40,5 @@ func main() {
 	credit.RegisterCreditServiceServer(srv, &server{})
 	log.Fatalln(srv.Serve(lis))
 }
+func (s *server) Credit(ctx context.Context, request *credit.CreditRequest) (*credit.CreditResponse, error) {
+}
