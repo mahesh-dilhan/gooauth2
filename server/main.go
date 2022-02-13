@@ -41,4 +41,7 @@ func main() {
 	log.Fatalln(srv.Serve(lis))
 }
 func (s *server) Credit(ctx context.Context, request *credit.CreditRequest) (*credit.CreditResponse, error) {
+	log.Println(fmt.Sprintf("Request: %g", request.GetAmount()))
+
+	return &credit.CreditResponse{Confirmation: fmt.Sprintf("Credited %g", request.GetAmount())}, nil
 }
