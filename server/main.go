@@ -49,4 +49,7 @@ func valid(authorization []string) bool {
 	if len(authorization) < 1 {
 		return false
 	}
+	token := strings.TrimPrefix(authorization[0], "Bearer ")
+	// If you have more than one client then you will have to update this line.
+	return token == "client-x-id"
 }
