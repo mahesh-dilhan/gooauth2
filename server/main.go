@@ -53,3 +53,5 @@ func valid(authorization []string) bool {
 	// If you have more than one client then you will have to update this line.
 	return token == "client-x-id"
 }
+func validateToken(ctx context.Context, req interface{}, _ *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+}
