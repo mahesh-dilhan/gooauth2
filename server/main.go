@@ -54,4 +54,6 @@ func valid(authorization []string) bool {
 	return token == "client-x-id"
 }
 func validateToken(ctx context.Context, req interface{}, _ *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+	md, ok := metadata.FromIncomingContext(ctx)
+
 }
