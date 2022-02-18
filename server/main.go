@@ -55,5 +55,7 @@ func valid(authorization []string) bool {
 }
 func validateToken(ctx context.Context, req interface{}, _ *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
 	md, ok := metadata.FromIncomingContext(ctx)
-
+	if !ok {
+		return nil, status.Errorf(codes.InvalidArgument, "missing metadata")
+	}
 }
