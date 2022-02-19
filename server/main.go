@@ -58,4 +58,7 @@ func validateToken(ctx context.Context, req interface{}, _ *grpc.UnaryServerInfo
 	if !ok {
 		return nil, status.Errorf(codes.InvalidArgument, "missing metadata")
 	}
+	if !valid(md["authorization"]) {
+		return nil, status.Errorf(codes.Unauthenticated, "invalid token")
+	}
 }
