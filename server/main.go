@@ -61,4 +61,5 @@ func validateToken(ctx context.Context, req interface{}, _ *grpc.UnaryServerInfo
 	if !valid(md["authorization"]) {
 		return nil, status.Errorf(codes.Unauthenticated, "invalid token")
 	}
+	return handler(ctx, req)
 }
